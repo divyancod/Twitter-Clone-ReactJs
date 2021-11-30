@@ -1,0 +1,27 @@
+.tweet-icons {
+    display: flex;
+    alignItems: "center";
+}
+
+.tweet-icons_group {
+    display: flex;
+    gap: 22%;
+    margin-top: 15px;
+    color: #9d9d9d;
+}
+
+.tweet-icons-icon {
+    margin-top: 3px;
+}
+
+.tweet-icons-text {
+    margin-left: 6px;
+}
+
+.main-all-card {
+    display: flex;
+}
+
+.main-all-card:hover {
+    background-color: #f3f3f3;
+}

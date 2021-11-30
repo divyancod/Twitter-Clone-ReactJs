@@ -1,0 +1,34 @@
+.search-div {
+    background-color: #EFF3F4;
+    padding: 8px;
+    border-radius: 25px;
+    margin-top: 10px;
+    margin-left: 8px;
+}
+
+.search-input {
+    border: 0;
+    background-color: #EFF3F4;
+    margin-left: 5px;
+    outline: none;
+}
+
+.search-div:focus-within {
+    border: 1px solid #1D9BF0;
+    background-color: white;
+}
+
+.search-input:focus {
+    background-color: white;
+}
+.trending-section
+{
+    margin-top: 10px;
+    margin-left: 8px;
+    border-radius: 10px;
+    background-color: #F7F9F9;
+}
+.trending-card:hover
+{
+    background-color: #EFF3F4;
+}
