@@ -7,22 +7,24 @@ import './SingleTweetCard.css'
 
 
 class SingleTweetCard extends Component {
+    constructor(props) {
+        super(props);
+    }
     render() {
         return (
             <div className="main-all-card">
                 <img alt="something is here" src={testimg} height={46} style={{borderRadius: "50%", margin: "10px"}}/>
                 <div style={{marginLeft: "5px", width: "100%", marginRight: "10px"}}>
                     <div>
-                        <p style={{margin: "0", marginTop: "5px", display: "inline-block"}}><b>Divyanshu
-                            Verma</b></p>
-                        <p style={{display: "inline-block", marginLeft: "2px", color: "#797979"}}>@divyanshu_verma &#8226; 15m</p>
-                        <BsThreeDots style={{float: "right", marginTop: "8px",color: "#797979"}}/>
+                        <p style={{margin: "0", marginTop: "5px", display: "inline-block"}}><b>{this.props.tweet.displayName}</b></p>
+                        <p style={{
+                            display: "inline-block",
+                            marginLeft: "2px",
+                            color: "#797979"
+                        }}>@{this.props.tweet.username} &#8226; {new Date(this.props.tweet.time).toString()}</p>
+                        <BsThreeDots style={{float: "right", marginTop: "8px", color: "#797979"}}/>
                     </div>
-                    <p style={{margin: "0px"}}>This is an example of a tweet.This is an example of a tweet.This is an
-                        example of a tweet.This is an example of a tweet.This is an example of a tweet.This is an
-                        example of a tweet.This is an example of a tweet.This is an example of a tweet.This is an
-                        example of a tweet.This is an example of a tweet.This is an example of a tweet.This is an
-                        example of a tweet.This is an example of a tweet.</p>
+                    <p style={{margin: "0px"}}>{this.props.tweet.tweet}</p>
                     <div className="tweet-icons_group">
                         <div className="tweet-icons">
                             <BiMessageRounded size={20} className="tweet-icons-icon"/><p

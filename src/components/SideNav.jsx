@@ -8,6 +8,14 @@ import {BsTwitter} from "react-icons/bs";
 import {Button} from "reactstrap";
 
 class SideNav extends Component {
+    constructor(props) {
+        super(props);
+        this.performLogout = this.performLogout.bind(this)
+    }
+    performLogout = ()=>{
+        localStorage.clear();
+        window.location.reload();
+    }
     render() {
         return (
             <div>
@@ -22,9 +30,11 @@ class SideNav extends Component {
                                                                             text="Profile"/></NavLink>
                 <NavLink className="nav-items" to="/more"><SideNavSingle Icon={CgMoreO} text="More"/></NavLink>
                 <Button color="primary" style={{borderRadius:"120px",width:"80%"}}>Tweet</Button>
+                <Button color="danger" style={{borderRadius:"120px",width:"80%",marginTop:"20px"}} onClick={this.performLogout}>Logout</Button>
             </div>
         );
     }
 }
+
 
 export default SideNav;

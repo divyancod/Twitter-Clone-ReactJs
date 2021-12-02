@@ -11,26 +11,33 @@ import SignIn from "./components/SignIn";
 import HomePage from "./HomePage";
 import NotFound from "./components/NotFound";
 import HTest from "./HTest";
+import firebaseConfig from './firebase'
+import firebase from "firebase/compat/app";
+import {Provider} from "react-redux";
+import store from './reducers/store'
+
+firebase.initializeApp(firebaseConfig);
 
 function App() {
     return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<HomePage/>}>
-                    <Route path="/" element={<HomeContainer/>}/>
-                    <Route path="/explore" element={<Explore/>}/>
-                    <Route path="/notifications" element={<Notification/>}/>
-                    <Route path="/messages" element={<Message/>}/>
-                    <Route path="/profile" element={<Profile/>}/>
-                    <Route path="/more" element={<More/>}/>
-                </Route>
-                <Route path="/signin" element={<SignIn/>}/>
-                <Route path="/test" element={<HTest/>}/>
-                <Route path="*" element={<NotFound/>}/>
-            </Routes>
-        </Router>
-    )
-        ;
+        <Provider store={store}>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<HomePage/>}>
+                        <Route path="/" element={<HomeContainer/>}/>
+                        <Route path="/explore" element={<Explore/>}/>
+                        <Route path="/notifications" element={<Notification/>}/>
+                        <Route path="/messages" element={<Message/>}/>
+                        <Route path="/profile" element={<Profile/>}/>
+                        <Route path="/more" element={<More/>}/>
+                    </Route>
+                    <Route path="/signin" element={<SignIn/>}/>
+                    <Route path="/test" element={<HTest/>}/>
+                    <Route path="*" element={<NotFound/>}/>
+                </Routes>
+            </Router>
+        </Provider>
+    );
 }
 
 export default App;

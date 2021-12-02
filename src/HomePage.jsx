@@ -3,11 +3,16 @@ import {Navigate, Outlet} from "react-router-dom";
 import {Container} from "reactstrap";
 import SideNav from "./components/SideNav";
 import TrendingSection from "./components/TrendingSection";
-import SignIn from "./components/SignIn";
+import {connect} from "react-redux";
+import {isLogIn} from "./reducers/mainActions";
 
 class HomePage extends Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
-        const isAuth = true;
+        const isAuth = this.props.isLogIn();
         return (
             !isAuth ? <Navigate to="/signin"/> : <Container>
                 <div style={{display: "flex"}}>
@@ -27,4 +32,9 @@ class HomePage extends Component {
     }
 }
 
-export default HomePage;
+const mapStateToProps = state => {
+    return {
+        isLogged: state.isLogged
+    }
+}
+export default connect(mapStateToProps, {isLogIn})(HomePage);
