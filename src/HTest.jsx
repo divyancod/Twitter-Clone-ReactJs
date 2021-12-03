@@ -17,7 +17,7 @@ class HTest extends Component {
             <div>
                 <h1>I am test</h1>
                 <Input type="textarea"/>
-                <Button onClick={this.createTweet}>Tweet</Button>
+                <Button onClick={this.createTweet}>Tweeter</Button>
             </div>
         );
     }

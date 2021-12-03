@@ -21,7 +21,7 @@ class SingleTweetCard extends Component {
                             display: "inline-block",
                             marginLeft: "2px",
                             color: "#797979"
-                        }}>@{this.props.tweet.username} &#8226; {new Date(this.props.tweet.time).toString()}</p>
+                        }}>@{this.props.tweet.username} &#8226; {new Date(this.props.tweet.time).getUTCDate().toString()}m ago</p>
                         <BsThreeDots style={{float: "right", marginTop: "8px", color: "#797979"}}/>
                     </div>
                     <p style={{margin: "0px"}}>{this.props.tweet.tweet}</p>
